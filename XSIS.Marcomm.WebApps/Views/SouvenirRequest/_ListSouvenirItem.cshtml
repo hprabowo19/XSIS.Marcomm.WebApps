@@ -1,0 +1,35 @@
+﻿@model IEnumerable<XSIS.Marcomm.ViewModels.SouvenirRequestViewModel>
+
+@if (!Model.Any())
+{
+    <tr>
+        <td colspan="4" class="text-center text-danger">- Data not found -</td>
+    </tr>
+}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.HiddenFor(modelItem => item.id)
+            <input type="text" class="input-box" value="@item.souvenirIdToSouvenirName" disabled />
+        </td>
+        <td>
+            <input type="number" class="input-box" value="@item.qty" disabled />
+        </td>
+        @if (ViewBag.IdRole == 1 || ViewBag.status == 5)
+        {
+            <td>
+                <input type="number" class="input-box" value="@item.qtySettlement" disabled />
+            </td>
+        }
+        else
+        {
+            <td>
+                <input type="number" class="input-box" value="" name="qtySettlement"/>
+            </td>
+        }
+        <td>
+            <input type="text" class="input-box" value="@item.note" disabled />
+        </td>
+    </tr>
+}

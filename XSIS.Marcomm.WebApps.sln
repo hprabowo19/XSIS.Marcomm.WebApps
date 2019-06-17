@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSIS.Marcomm.WebApps", "XSIS.Marcomm.WebApps\XSIS.Marcomm.WebApps.csproj", "{E094AF5F-4466-45C9-91A2-68D501C73E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSIS.Marcomm.Models", "XSIS.Marcomm.Models\XSIS.Marcomm.Models.csproj", "{8D494C7E-FBC7-4D7A-B683-EC4D70692182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSIS.Marcomm.ViewModels", "XSIS.Marcomm.ViewModels\XSIS.Marcomm.ViewModels.csproj", "{B074E344-A845-45A2-96E7-1971B0C1E917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSIS.Marcomm.Repositories", "XSIS.Marcomm.Repositories\XSIS.Marcomm.Repositories.csproj", "{1EF43D40-A48A-4B8E-B895-DF9303D32609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSIS.Marcomm.API", "XSIS.Marcomm.API\XSIS.Marcomm.API.csproj", "{7F809FBD-8851-472B-A5A2-64D98EFEDED3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E094AF5F-4466-45C9-91A2-68D501C73E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E094AF5F-4466-45C9-91A2-68D501C73E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E094AF5F-4466-45C9-91A2-68D501C73E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E094AF5F-4466-45C9-91A2-68D501C73E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D494C7E-FBC7-4D7A-B683-EC4D70692182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D494C7E-FBC7-4D7A-B683-EC4D70692182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D494C7E-FBC7-4D7A-B683-EC4D70692182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D494C7E-FBC7-4D7A-B683-EC4D70692182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B074E344-A845-45A2-96E7-1971B0C1E917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B074E344-A845-45A2-96E7-1971B0C1E917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B074E344-A845-45A2-96E7-1971B0C1E917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B074E344-A845-45A2-96E7-1971B0C1E917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF43D40-A48A-4B8E-B895-DF9303D32609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF43D40-A48A-4B8E-B895-DF9303D32609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF43D40-A48A-4B8E-B895-DF9303D32609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF43D40-A48A-4B8E-B895-DF9303D32609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F809FBD-8851-472B-A5A2-64D98EFEDED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F809FBD-8851-472B-A5A2-64D98EFEDED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F809FBD-8851-472B-A5A2-64D98EFEDED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F809FBD-8851-472B-A5A2-64D98EFEDED3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {021BA658-452C-43A7-AEB1-0F46E0B7D0DE}
+	EndGlobalSection
+EndGlobal

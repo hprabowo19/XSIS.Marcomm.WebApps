@@ -1,0 +1,84 @@
+﻿@{
+    if (Session["RoleName"] != null)
+    {
+        var role = Session["RoleName"].ToString();
+        string roleName = role.Replace("\\", "").Replace("\"", "");
+        ViewBag.RoleName = roleName;
+    }
+
+    if(Session["DetailEmployee"] != null)
+    {
+        var Employee = (XSIS.Marcomm.ViewModels.EmployeeViewModel)Session["DetailEmployee"];
+        ViewBag.FullName = Employee.FirstName + " " + Employee.LastName;
+        ViewBag.Email = Employee.Email;
+    }
+}
+
+<aside id="sidebar" class="sidebar c-overflow">
+    <div class="s-profile">
+        @if (Request.IsAuthenticated)
+        {
+            <a href="#" data-ma-action="profile-menu-toggle">
+                <div class="sp-pic">
+                    <img src="~/Content/img/demo/profile-pics/2.jpg" alt="">
+                </div>
+
+                <div class="sp-info">
+                    Hello, @User.Identity.Name
+                    <i class="zmdi zmdi-caret-down"></i>
+                </div>
+            </a>
+            <ul class="main-menu">
+                <li>
+                    <a href="#"><i class="zmdi zmdi-account"></i> @ViewBag.FullName </a>
+                </li>
+                <li>
+                    <a href="#"><i class="zmdi zmdi-input-antenna"></i> @ViewBag.Email </a>
+                </li>
+                <li>
+                    <a href="#"><i class="zmdi zmdi-settings"></i> @ViewBag.RoleName </a>
+                </li>
+                <li>
+                    <a href="#" onclick="logout(); return false;"><i class=" zmdi zmdi-time-restore"></i> Logout</a>
+                </li>
+            </ul>
+        }
+        else
+        {
+            <a href="#" data-ma-action="profile-menu-toggle">
+                <div class="sp-pic">
+                    <img src="~/Content/img/demo/profile-pics/user.png" alt="">
+                </div>
+                <div class="sp-info">
+                    Hello user
+                    <i class="zmdi zmdi-caret-down"></i>
+                </div>
+            </a>
+            <ul class="main-menu">
+                <li>
+                    <a href="/Account/Login"><i class="zmdi zmdi-settings"></i> Sign In</a>
+                </li>
+            </ul>
+        }
+    </div>
+
+    @Html.Partial("_NavbarPartial")
+</aside>
+
+<script type="text/javascript">
+    function logout() {
+        var vHref = '@Url.Action("Login","Account")';
+
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("Logout","Account")",
+            success: function (data) {
+                if (data.result) {
+                    window.location.href = vHref;
+                }
+            }
+        });
+
+        return false;
+    }
+</script>

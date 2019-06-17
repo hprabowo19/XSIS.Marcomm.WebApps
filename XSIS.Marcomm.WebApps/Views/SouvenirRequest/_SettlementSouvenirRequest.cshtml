@@ -1,0 +1,164 @@
+﻿@model XSIS.Marcomm.ViewModels.SouvenirStockViewModel
+
+@{
+    ViewBag.Title = "Settlement Souvenir Request";
+}
+
+<section class="settlement-request">
+    <div class="card">
+        <div class="card-padding">
+            <div class="card-header">
+                <h2>
+                    @ViewBag.Title -
+                    @Html.DisplayFor(model => model.code)
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="my-box">
+                    <div class="row">
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-3">
+                            * Transaction Code
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.code, new { @class = "input-box", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            * Event Code
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.eventIdToEventCode, new { @class = "input-box", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            * Request By
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.requestByToFullName, new { @class = "input-box", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            * Request Date
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.requestDate, new { @class = "input-box", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            * Due Date
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.requestDueDate, new { @class = "input-box", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            Note
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.note, new { @class = "input-box box-note", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3">
+                            Status
+                        </div>
+                        <div class="col-sm-6">
+                            @Html.TextBoxFor(model => model.statusText, new { @class = "input-box input-box-modal", @disabled = "disabled" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                            Souvenir Name
+                                        </th>
+                                        <th class="text-center">
+                                            Qty
+                                        </th>
+                                        <th class="text-center">
+                                            Qty Actual
+                                        </th>
+                                        <th class="text-center">
+                                            Note
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody-souvenir"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10" id="my-validate">
+                    </div>
+                </div>
+                <div class="row modal-footer">
+                    @if (ViewBag.IdRole == 1)
+                    {
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn my-btn btn-primary btn-approve" id="approved" data-id="@Model.id">
+                                <span>Approved</span>
+                            </button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn my-btn btn-danger btn-approve" id="rejected" data-id="@Model.id">
+                                <span>Rejected</span>
+                            </button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn my-btn btn-warning" data-dismiss="modal">
+                                <span>Cancel</span>
+                            </button>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    }
+                    else
+                    {
+                        <div class="col-sm-2"></div>
+                        if (Model.status == 5)
+                        {
+                            <div class="col-sm-4">
+                                <button type="button" class="btn my-btn btn-primary btn-close" data-id="@Model.id">
+                                    <span>Close Request</span>
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-sm-4">
+                                <button type="button" class="btn my-btn btn-primary btn-settlement">
+                                    <span>Settlement</span>
+                                </button>
+                            </div>
+                        }
+                        <div class="col-sm-4">
+                            <button type="button" class="btn my-btn btn-warning" data-dismiss="modal">
+                                <span>Cancel</span>
+                            </button>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

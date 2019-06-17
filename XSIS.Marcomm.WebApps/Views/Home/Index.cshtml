@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.SelectedHome = "active";
+    ViewBag.SelectedMasterCompany = "";
+    ViewBag.SelectedMasterEmployee = "";
+    ViewBag.SelectedMasterRole = "";
+    ViewBag.SelectedMasterUser = "";
+    ViewBag.SelectedMasterMenu = "";
+    ViewBag.SelectedMasterMenuAccess = "";
+    ViewBag.SelectedMasterProduct = "";
+    ViewBag.SelectedMasterSouvenir = "";
+    ViewBag.SelectedMasterUnit = "";
+    ViewBag.SelectedTransactionEvent = "";
+    ViewBag.SelectedTransactionDesign = "";
+    ViewBag.SelectedTransactionPromotion = "";
+    ViewBag.SelectedTransactionSouvenir = "";
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body m-t-0">
+                <div class="card-header">
+                    <h2>Welcome To XSIS Marcomm System Dashboard</h2>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="mini-charts-item bgm-lightgreen">
+                        <div class="clearfix">
+                            <div class="chart stats-bar"></div>
+                            <div class="count">
+                                <small>Total Company</small>
+                                <h2>@ViewBag.TotalCompany</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="mini-charts-item bgm-purple">
+                        <div class="clearfix">
+                            <div class="chart stats-bar-2"></div>
+                            <div class="count">
+                                <small>Total Employee</small>
+                                <h2>@ViewBag.TotalEmployee</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="mini-charts-item bgm-orange">
+                        <div class="clearfix">
+                            <div class="chart stats-line"></div>
+                            <div class="count">
+                                <small>Total User</small>
+                                <h2>@ViewBag.TotalUser</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="mini-charts-item bgm-bluegray">
+                        <div class="clearfix">
+                            <div class="chart stats-line-2"></div>
+                            <div class="count">
+                                <small>Total Product</small>
+                                <h2>@ViewBag.TotalProduct</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-inner table-vmiddle">
+                    <thead>
+                        <tr></tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="recent-items-chart" class="flot-chart"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5a12244cf4c4957bdfc28cb2c0480ca" Name="Diagram1">
+        <EntityTypeShape EntityType="MarcommModel.m_company" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_employee" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_menu" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_menu_access" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_product" Width="1.5" PointX="7.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_role" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_souvenir" Width="1.5" PointX="5.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_unit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.m_user" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_design" Width="1.5" PointX="7.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_design_item" Width="1.5" PointX="9.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_event" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_promotion" Width="1.5" PointX="12.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_promotion_item" Width="1.5" PointX="18" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_promotion_item_file" Width="1.5" PointX="15" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_souvenir" Width="1.5" PointX="5.25" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarcommModel.t_souvenir_item" Width="1.5" PointX="7.5" PointY="29.375" IsExpanded="true" />
+        <AssociationConnector Association="MarcommModel.FK_m_employee_m_company" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_m_user_m_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_approved_by" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_assign_to" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_item_m_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_request_by" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_item_m_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_m_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_m_employee1" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_m_employee2" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_m_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_m_employee1" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_m_employee2" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_m_employee3" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_m_employee4" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FKTabel_m_employee_approved_by" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FKTabel_m_employee_assign_to" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FKTabel_m_employee_request_by" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_m_menu_access_m_menu" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_m_menu_access_m_role" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_item_m_product" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_item_t_promotion_item" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_m_user_m_role" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_item_m_souvenir" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_item_t_design" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_design_t_event" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_t_promotion" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_item_t_design" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_t_event" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_item_file_t_promotion" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_promotion_item_t_promotion" ManuallyRouted="false" />
+        <AssociationConnector Association="MarcommModel.FK_t_souvenir_item_t_souvenir" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

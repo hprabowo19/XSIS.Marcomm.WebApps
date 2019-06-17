@@ -1,0 +1,70 @@
+﻿@model XSIS.Marcomm.ViewModels.MenuAccessViewModel
+
+@{
+    ViewBag.Title = "Edit Menu Access";
+}
+
+<section class="edit">
+    <div class="card">
+        <div class="card-padding">
+            <div class="card-header bg-primary">
+                @Html.HiddenFor(model => model.mRoleName)
+                <h2 class="title">
+                    @ViewBag.Title -
+                    @Html.DisplayFor(model => model.mRoleName)
+                    (@Html.DisplayFor(model => model.mRoleCode))
+                </h2>
+            </div>
+            <div class="card-body">
+                @Html.HiddenFor(model => model.mRoleId)
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        * Role Code
+                    </div>
+                    <div class="col-sm-7">
+                        @Html.TextBoxFor(model => model.mRoleCode, new { @class = "input-box", @disabled = "disabled" })
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3">
+                        * Menu Access
+                    </div>
+                    <div class="col-sm-7">
+                        @foreach (var item in Model.availableMenus)
+                        {
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="selectedMenus" @(item.Selected ? "checked" : "" ) value="@item.Value" />
+                                    <i class="input-helper"></i>
+                                    @item.Text
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10" id="my-validate">
+                    </div>
+                </div>
+                <div class="row modal-footer">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn my-btn btn-primary btn-edit">
+                            <span>Update</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn my-btn btn-warning" data-dismiss="modal">
+                            <span>Cancel</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

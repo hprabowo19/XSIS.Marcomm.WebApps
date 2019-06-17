@@ -1,0 +1,41 @@
+﻿@model IEnumerable<XSIS.Marcomm.ViewModels.RoleViewModel>
+@{
+    int i = 0;
+    if (!Model.Any())
+    {
+        <tr>
+            <td colspan="6" class="text-center text-danger">- Data not found -</td>
+        </tr>
+    }
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @(++i)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                <a data-toggle="modal" href="#" class="modalMenuAccess" id="Details" data-id="@item.ID">
+                    <i class="zmdi zmdi-search zmdi-hc-lg"></i>
+                </a>
+                <a data-toggle="modal" href="#" class="modalMenuAccess" id="Edit" data-id="@item.ID">
+                    <i class="zmdi zmdi-edit zmdi-hc-lg"></i>
+                </a>
+                <a data-toggle="modal" href="#" class="modalMenuAccess" id="Delete" data-id="@item.ID" data-code="@item.Code">
+                    <i class="zmdi zmdi-delete zmdi-hc-lg"></i>
+                </a>
+            </td>
+        </tr>
+    }
+}

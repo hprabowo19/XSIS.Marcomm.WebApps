@@ -1,0 +1,93 @@
+﻿@{
+    IEnumerable<XSIS.Marcomm.ViewModels.MenuNavigationViewModel> ListMenus = null;
+
+    if (Session["DetailMenu"] != null)
+    {
+        ListMenus = (IEnumerable<XSIS.Marcomm.ViewModels.MenuNavigationViewModel>)Session["DetailMenu"];
+    }
+}
+
+<ul class="main-menu">
+    <li class="@ViewBag.SelectedHome">
+        <a href="/Home/Index"><i class="zmdi zmdi-home"></i> Home</a>
+    </li>
+    @if (Request.IsAuthenticated)
+    {
+        if (ListMenus != null)
+        {
+            foreach (var item in ListMenus)
+            {
+                if (item.Code == "ME0003")
+                {
+                    <li class="@ViewBag.SelectedMasterCompany"><a href="@item.Controller"><i class="zmdi zmdi-chart"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0001")
+                {
+                    <li class="@ViewBag.SelectedMasterEmployee"><a href="@item.Controller"><i class="zmdi zmdi-cast-connected"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0002")
+                {
+                    <li class="@ViewBag.SelectedMasterRole"><a href="@item.Controller"><i class="zmdi zmdi-widgets"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0004")
+                {
+                    <li class="@ViewBag.SelectedMasterUser"><a href="@item.Controller"><i class="zmdi zmdi-view-list"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0005")
+                {
+                    <li class="@ViewBag.SelectedMasterMenu"><a href="@item.Controller"><i class="zmdi zmdi-collection-text"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0006")
+                {
+                    <li class="@ViewBag.SelectedMasterMenuAccess"><a href="@item.Controller"><i class="zmdi zmdi-swap-alt"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0007")
+                {
+                    <li class="@ViewBag.SelectedMasterProduct"><a href="@item.Controller"><i class="zmdi zmdi-trending-up"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0008")
+                {
+                    <li class="@ViewBag.SelectedMasterSouvenir"><a href="@item.Controller"><i class="zmdi zmdi-calendar"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "ME0009")
+                {
+                    <li class="@ViewBag.SelectedMasterUnit"><a href="@item.Controller"><i class="zmdi zmdi-image"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "TR0001")
+                {
+                    <li class="@ViewBag.SelectedTransactionEvent"><a href="@item.Controller"><i class="zmdi zmdi-layers"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "TR0002")
+                {
+                    <li class="@ViewBag.SelectedTransactionDesign"><a href="@item.Controller"><i class="zmdi zmdi-collection-item"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "TR0003")
+                {
+                    <li class="@ViewBag.SelectedTransactionPromotion"><a href="@item.Controller"><i class="zmdi zmdi-menu"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "TR0004")
+                {
+                    <li class="@ViewBag.SelectedTransactionSouvenir"><a href="@item.Controller"><i class="zmdi zmdi-card-membership"></i>@item.Name</a></li>
+                }
+
+                if (item.Code == "TR0005")
+                {
+                    <li class="@ViewBag.SelectedTransactionSouvenirRequest"><a href="@item.Controller"><i class="zmdi zmdi-case-check"></i>@item.Name</a></li>
+                }
+            }
+        }
+    }
+</ul>
+
